@@ -24,6 +24,13 @@ namespace Linked_List
             }
             Console.WriteLine("{0} inserted into the linked list", node.data);
         }
+        internal Node RemoveFirstNode()
+        {
+            if (this.head == null)
+                return null;
+            this.head = this.head.next;
+            return this.head;
+        }
         public int Search(int value)
         {
             Node node = this.head;
@@ -67,6 +74,7 @@ namespace Linked_List
             }
             return head;
         }
+
         internal void Display()
         {
             Node temp = this.head;

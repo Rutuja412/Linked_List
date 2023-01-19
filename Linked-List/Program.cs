@@ -10,12 +10,17 @@ namespace Linked_List
             Console.WriteLine("*********Linked List Practice Problems *******");
             LinkedLists list = new LinkedLists();
             list.Add(56);
+            list.Add(30);
             list.Add(70);
             Console.Write("\n");
             Console.WriteLine("LinkedList Sequence:");
             Console.WriteLine("-----------------------------");
-             list.InsertAtParticularPosition(2, 30);
-            Console.WriteLine("-----------------------------");
+            list.Display();
+            Console.WriteLine("\n");
+
+            Console.WriteLine("After delete the first value and the LinkedList sequence is:");
+            Console.WriteLine("------------------------------------------------------------------");
+            list.RemoveFirstNode();
             list.Display();
             Console.WriteLine("\n");
 
