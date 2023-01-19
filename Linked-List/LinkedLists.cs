@@ -24,20 +24,48 @@ namespace Linked_List
             }
             Console.WriteLine("{0} inserted into the linked list", node.data);
         }
-        internal void Append(int data)
+        public int Search(int value)
         {
-            Node node2 = new Node(data);
-            if (this.head == null)
+            Node node = this.head;
+            int count = 1;
+            while (node != null)
             {
-                this.head = node2;
+                if (node.data == value)
+                {
+                    return count;
+                }
+                node = node.next;
+                count++;
+            }
+            return count;
+        }
+        public Node InsertAtParticularPosition(int position, int data)
+        {
+            if (position < 1)
+                Console.WriteLine("Invalid position");
+            if (position == 1)
+            {
+                var newNode = new Node(data);
+                newNode.next = this.head;
+                head = newNode;
             }
             else
             {
-                Node temp = this.head;
-                head = node2;
-                head.next = temp;
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        Node node = new Node(data);
+                        node.next = this.head.next;
+                        head.next = node;
+                        break;
+                    }
+                    head = head.next;
+                }
+                if (position != 1)
+                    Console.WriteLine("Position is out of range");
             }
-            System.Console.WriteLine(data + " added in  appending order \n ");
+            return head;
         }
         internal void Display()
         {
