@@ -35,7 +35,7 @@ namespace Linked_List
             }
             while (temp != null)
             {
-                Console.Write(temp.data + " ");
+                Console.Write( temp.data  + " \n ");
                 temp = temp.next;
             }
         }
