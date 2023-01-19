@@ -24,7 +24,21 @@ namespace Linked_List
             }
             Console.WriteLine("{0} inserted into the linked list", node.data);
         }
-
+        internal void Append(int data)
+        {
+            Node node2 = new Node(data);
+            if (this.head == null)
+            {
+                this.head = node2;
+            }
+            else
+            {
+                Node temp = this.head;
+                head = node2;
+                head.next = temp;
+            }
+            System.Console.WriteLine(data + " added in  appending order \n ");
+        }
         internal void Display()
         {
             Node temp = this.head;
@@ -35,7 +49,7 @@ namespace Linked_List
             }
             while (temp != null)
             {
-                Console.Write( temp.data  + " \n ");
+                Console.Write( temp.data  + "->");
                 temp = temp.next;
             }
         }
