@@ -18,11 +18,11 @@ namespace Linked_List
             list.Display();
             Console.WriteLine("\n");
 
-            Console.WriteLine("After delete the Last value and the LinkedList sequence is:");
+            
             Console.WriteLine("------------------------------------------------------------------");
-            list.RemoveLastNode();
-            list.Display();
-            Console.WriteLine("\n");
+            list.Search(30);
+            
+           
 
         }
     }

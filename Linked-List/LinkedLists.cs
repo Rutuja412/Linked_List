@@ -11,18 +11,32 @@ namespace Linked_List
         internal void Add(int data)
         {
             Node node = new Node(data);
-            if (this.head == null)
-                this.head = node;
+            if (this.head == null)// check head is equal to null value or not
+                this.head = node; // node value assign to head
             else
             {
-                Node temp = head;
+                Node temp = head;// temp node  assign head
                 while (temp.next != null)
                 {
-                    temp = temp.next;
+                    temp = temp.next;//temp goes to next
                 }
                 temp.next = node;
             }
             Console.WriteLine("{0} inserted into the linked list", node.data);
+        }
+        internal void Display()
+        {
+            Node temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("Linked list is empty");
+                return;
+            }
+            while (temp != null)
+            {
+                Console.Write(temp.data + "->");
+                temp = temp.next;
+            }
         }
         internal Node RemoveFirstNode()
         {
@@ -45,20 +59,20 @@ namespace Linked_List
             newNode.next = null;
             return head;
         }
-        public int Search(int value)
+        internal void Search(int value)
         {
-            Node node = this.head;
-            int count = 1;
-            while (node != null)
+            Node temp = this.head;
+            while (temp != null)
             {
-                if (node.data == value)
+                if (temp.data == value)
                 {
-                    return count;
+                    Console.WriteLine("Given value: " + value + " is present in Linked list");
+                    return;
                 }
-                node = node.next;
-                count++;
+                temp = temp.next;
             }
-            return count;
+            if (temp == null)
+                Console.WriteLine("Given value: " + value + " is not present in Linked list");
         }
         public Node InsertAtParticularPosition(int position, int data)
         {
@@ -89,19 +103,6 @@ namespace Linked_List
             return head;
         }
 
-        internal void Display()
-        {
-            Node temp = this.head;
-            if (temp == null)
-            {
-                Console.WriteLine("Linked list is empty");
-                return;
-            }
-            while (temp != null)
-            {
-                Console.Write( temp.data  + "->");
-                temp = temp.next;
-            }
-        }
+        
     }
 }
